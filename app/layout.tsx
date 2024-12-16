@@ -23,8 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
-    <body>{children}</body>
-  </html>
+      <body className="h-100vh bg-gray-50">
+        <div className="p-8 h-full">
+          {children}
+        </div>
+      </body>
+    </html>
   );
 }
 
