@@ -1,20 +1,24 @@
 import type { Metadata } from "next";
 
+import { Lato } from 'next/font/google';
 
-import { Inter } from "next/font/google";
 
-import "./globals.css";
 
-const inter = Inter({
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
 
 export const metadata: Metadata = {
   title: "Eventogy - Static",
   description: "",
 };
+
+import "./globals.css";
+
+const lato = Lato({
+  subsets: ['latin'],
+  weight: ['100', '300', '400', '700', '900'],
+  display: 'swap',
+  variable: "--font-lato",
+})
+
 
 export default function RootLayout({
   children,
@@ -22,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={lato.className}>
       <body className="h-100vh bg-gray-50">
         <div className="p-8 h-full">
           {children}

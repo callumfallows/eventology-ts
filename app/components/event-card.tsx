@@ -39,19 +39,22 @@ export function EventCard({
           height={350}
           alt={title}
           className="w-full h-[200px] object-cover"
+          loading="lazy"
+          placeholder="blur"
+          blurDataURL="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
         />
       </CardHeader>
       <CardContent className="p-4">
         <div className="flex flex-col w-full justify-between space-y-4 items-start">
           <div>
-            <Badge variant="secondary" className="mb-2">
+            <Badge variant="default" className="mb-2 rounded-lg bg-green-500">
               {status}
             </Badge>
-            <h3 className="font-semibold text-lg">{title}</h3>
+            <h3 className="font-regular text-xl">{title}</h3>
           </div>
-          <div className="flex flex-col space-y-0 text-sm text-muted-foreground">
-            <h2 className="w-full text-lg text-gray-500">{dates}</h2>
-            <div className="w-full text-lg text-gray-500">{location}</div>
+          <div className="flex flex-col space-y-0 text-md text-muted-foreground">
+            <h2 className="w-full text-gray-500">{dates}</h2>
+            <div className="w-full text-gray-500">{location}</div>
           </div>
         </div>
       </CardContent>
