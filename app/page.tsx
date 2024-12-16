@@ -1,6 +1,5 @@
 import { eventRoutes } from '@/lib/api';
-import { formatEventDates } from '@/lib/dates';
-import { EventCard } from './components/event-card';
+import { EventsGrid } from './components/events-grid';
 
 const EventsPage = async () => {
 
@@ -10,23 +9,8 @@ const EventsPage = async () => {
 
     return (
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 place-items-center justify-center">
-          {currentEvents.map((event) => {
-            const upcomingDates = event.data?.scheduled_dates;
-            const location = event.data?.location_address ? event.data?.location_address : "Location not available";
-            const imageUrl = `https://picsum.photos/seed/${event.id}/${400}/${300}`;
-            const dates = formatEventDates(upcomingDates);
-
-            return (
-              <EventCard
-                key={event.id}
-                imageUrl={imageUrl}
-                title={event.name}
-                dates={dates}
-                location={location}
-                status="Upcoming" />
-            );
-          })}
+        <div className="flex flex-wrap gap-4 justify-center">
+          <EventsGrid currentEvents={currentEvents} />
         </div>
       </div>
     );

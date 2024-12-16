@@ -7,7 +7,7 @@ type EventData = {
   scheduled_dates?: string[];
 };
 
-type Event = {
+export type Event = {
   id: string;
   name: string;
   slug: string;
