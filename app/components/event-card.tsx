@@ -49,10 +49,9 @@ export function EventCard({
             </Badge>
             <h3 className="font-semibold text-lg">{title}</h3>
           </div>
-
           <div className="flex flex-col space-y-0 text-sm text-muted-foreground">
-            <h2 className="w-full">{dates}</h2>
-            <div className="w-full">{location}</div>
+            <h2 className="w-full text-lg text-gray-500">{dates}</h2>
+            <div className="w-full text-lg text-gray-500">{location}</div>
           </div>
         </div>
       </CardContent>
@@ -65,7 +64,7 @@ export function EventCard({
               </Button>
             </div>
           </PopoverTrigger>
-          <PopoverContent className="w-40">
+          <PopoverContent className="w-40" align="end">
             <div className="flex flex-col space-y-1">
               <Button variant="ghost" className="flex items-center justify-start">
                 <Settings className="mr-2 h-4 w-4" />
